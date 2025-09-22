@@ -1,1 +1,3 @@
 # Sprint_5
+Набор тестов по итогам спринта №5:
+test_create_ad_authorized_user, test_create_ad_unauthorized_user, test_user_login, test_user_logout, test_user_registration, test_user_registration_with_existing_user, test_user_registration_with_invalid_email

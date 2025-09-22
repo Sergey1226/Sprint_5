@@ -48,4 +48,24 @@ def open_registration_page(driver, wait):
     return driver, wait
 
 
+@pytest.fixture
+def open_login_page(driver, wait):
+    """Открытие страницы логина"""
+    from data import BASE_URL
+    from locators import Locators
+    
+    driver.get(BASE_URL)
+    
+    # Ожидаем, пока кнопка "Вход и регистрация" станет доступной и нажимаем
+    login_button = wait.until(EC.element_to_be_clickable(Locators.LOGIN_REGISTER_BUTTON))
+    login_button.click()
 
+    return driver
+
+@pytest.fixture
+def open_home_page(driver, wait):
+    """Открытие главной страницы"""
+    from data import BASE_URL
+    
+    driver.get(BASE_URL)
+    return driver, wait
